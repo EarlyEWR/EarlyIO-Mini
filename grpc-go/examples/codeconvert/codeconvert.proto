@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package codeconvert;
+
+service CodeConverter {
+  rpc GoToTypeScript (CodeRequest) returns (CodeReply) {}
+}
+
+message CodeRequest {
+  string go_code = 1;
+}
+
+message CodeReply {
+  string typescript_code = 1;
+}
