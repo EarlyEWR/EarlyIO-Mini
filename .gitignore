@@ -1,0 +1,25 @@
+# Go build artifacts
+bin/
+*.exe
+*.out
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Dependencies
+vendor/
+
+# Logs
+*.log
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Kubernetes
+kubeconfig*
+
+# Misc
+.DS_Store

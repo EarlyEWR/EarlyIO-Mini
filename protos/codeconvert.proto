@@ -1,0 +1,16 @@
+syntax = "proto3";
+package codeconvert;
+option go_package = "github.com/EarlyEWR/EarlyIO-Mini/protos/codeconvert;codeconvert";
+
+service CodeConvert {
+  rpc ToUpper (ConvertRequest) returns (ConvertResponse);
+  rpc ToLower (ConvertRequest) returns (ConvertResponse);
+}
+
+message ConvertRequest {
+  string text = 1;
+}
+
+message ConvertResponse {
+  string result = 1;
+}

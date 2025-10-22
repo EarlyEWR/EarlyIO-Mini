@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  codeconvert:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.codeconvert
+    ports:
+      - "50051:50051"
+    networks:
+      - appnet
+  http-example:
+    image: golang:1.22-alpine
+    working_dir: /app
+    volumes:
+      - ../../:/app
+    command: sh -c "go run examples/network/http/server.go"
+    ports:
+      - "8080:8080"
+    networks:
+      - appnet
+networks:
+  appnet: {}

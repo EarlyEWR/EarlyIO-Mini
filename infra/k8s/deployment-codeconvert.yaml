@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codeconvert
+  namespace: earlyio-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codeconvert
+  template:
+    metadata:
+      labels:
+        app: codeconvert
+    spec:
+      containers:
+        - name: codeconvert
+          image: earlyio/codeconvert:dev # Build & push locally or use kind load
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 50051
