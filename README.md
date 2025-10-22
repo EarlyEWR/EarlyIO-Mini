@@ -105,5 +105,3 @@ Terraform creates the namespace and a configmap as a starting point.
 - Missing protoc: install and ensure it's on PATH
 - gRPC compile errors: run `gen-proto.ps1`
 - Image not found in cluster: load into kind or push to registry
-
-Happy learning!
