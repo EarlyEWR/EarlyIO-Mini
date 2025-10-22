@@ -1,0 +1,18 @@
+# Optional Ingress (requires controller like nginx). This is illustrative only.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: codeconvert
+  namespace: earlyio-dev
+spec:
+  rules:
+    - host: codeconvert.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: codeconvert
+                port:
+                  number: 50051
